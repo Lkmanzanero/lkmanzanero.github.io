@@ -3,602 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Portfolio Website</title>
+    <title>My Project Homepage</title>
     <style>
-        @import url("https://fonts.googleapis.com/css?family=Poppins");
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Poopins, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-:root {
-    --primary-color: #1b1f24;
-    --primary-color-hover: #274049;
-    --primary-light-color: #22282f;
-    --primary-theme-color: #12bdff;
-    --primary-white: #fff;
-    --primary-yellow: #ffba53;
-    --primary-yellow-hover: #ff8f8f;
-    --primary-grey: #969595;
-}
-
-.blue-span {
-    color: var(--primary-theme-color);
-}
-
-.grey-span {
-    color: var(--primary-grey);
-}
-
-.btn {
-    margin-top: 7px;
-    font-weight: 900;
-    padding: 5px 10px;
-    background-color: var(--primary-color);
-    color: var(--primary-theme-color);
-    border: 2px solid var(--primary-theme-color);
-    border-radius: 10px;
-}
-
-.btn:hover {
-    box-shadow: 2px 2px 10px var(--primary-theme-color);
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary-white);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-input[type="color"] {
-    border: none;
-}
-
-input[type="color"]::-webkit-color-swatch-wrapper {
-    padding: 0;
-}
-
-input[type="color"]::-webkit-color-swatch-wrapper {
-    border: none;
-}
-
-.theme-picker {
-    width: 25px;
-    height: 25px;
-    position: fixed;
-    bottom: 50px;
-    right: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.submit-btn {
-    font-weight: 900;
-    padding: 10px;
-    background-color: var(--primary-theme-color);
-    color: var(--primary-white);
-    border: 2px solid var(--primary-theme-color);
-    border-radius: 10px;
-}
-
-s .submit-btn:hover {
-    cursor: pointer;
-    background-color: var(--primary-color);
-    color: var(--primary-white);
-}
-
-/* header style */
-
-header {
-    background-color: var(--primary-color);
-    padding: 20px;
-    color: var(--primary-white);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: sticky;
-    top: 0;
-}
-
-header ul {
-    display: flex;
-    list-style: none;
-}
-
-header ul li {
-    margin-left: 20px;
-}
-
-header ul li a {
-    text-decoration: none;
-    color: var(--primary-white);
-    font-size: 18px;
-    font-weight: 600;
-}
-
-header ul li a :hover {
-
-    color: var(--primary-theme-color);
-}
-
-header button {
-    font-weight: 900;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: var(--primary-theme-color);
-    border: 2px solid var(--primary-theme-color);
-    border-radius: 10px;
-}
-
-header button:hover {
-    cursor: pointer;
-    background-color: var(--primary-theme-color);
-    color: var(--primary-white);
-}
-
-.logo-text {
-    letter-spacing: 2px;
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.header-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 45%;
-}
-
-.menu-icon {
-    display: none;
-}
-
-.cancel-icon {
-    display: none;
-}
-
-/* hero section design */
-
-.hero-section {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--primary-color);
-}
-
-.hero-text {
-    color: var(--primary-white);
-    padding: 20px;
-    font-size: 20px;
-}
-
-.social-icon {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    width: 100px;
-}
-
-.social-icon a {
-    text-decoration: none;
-}
-
-.social-icon a i {
-    font-size: 24px; 
-    transition: all 0.3s ease;
-}
-
-.social-icon a i.fa-facebook:hover {
-    color: #12bdff;
-}
-
-.social-icon a i.fa-youtube:hover {
-    color: #12bdff;
-}
-
-.social-icon a i.fa-instagram:hover {
-    color: #12bdff;
-}
-
-/* about section  */
-
-.about-section {
-    background-color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 80px;
-}
-
-.img-div {
-    height: 300px;
-    width: 300px;
-}
-
-.about-section img {
-    border-radius: 50%;
-    background-color: var(--primary-light-color);
-    border: 2px solid var(--primary-theme-color);
-    box-shadow: 2px 2px 30px var(--primary-theme-color);
-}
-
-.about-section ol {
-    list-style: none;
-    color: var(--primary-white);
-    margin-left: 90px;
-}
-
-.about-section ol li h1 {
-    color: var(--primary-white);
-    margin-bottom: 10px;
-    font-size: 50px;
-}
-
-.about-section li {
-    margin-bottom: 10px;
-    color: var(--primary-grey);
-}
-
-.about-section li a:hover {
-    color: var(--primary-theme-color);
-}
-
-.about-section li strong {
-    color: var(--primary-white);
-}
-
-/* service section */
-
-.service-section {
-    background-color: var(--primary-light-color);
-    color: var(--primary-white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 100px 30px;
-}
-
-.service-cards-container {
-    display: flex;
-    margin-top: 20px;
-}
-
-.service-card {
-    background-color: var(--primary-color);
-    padding: 20px;
-    border-radius: 20px;
-    margin: 0 10px;
-}
-
-.service-card:hover {
-    background-color: var(--primary-color-hover);
-    box-shadow: 2p 5px 20px var(--primary-color);
-}
-
-.service-card a {
-    color: var(--primary-yellow);
-}
-
-.service-card a:hover {
-    color: var(--primary-yellow-hover);
-}
-
-.service-card p {
-    color: var(--primary-grey);
-    padding: 5px 0;
-}
-
-.service-card i {
-    padding: 10px;
-    background-color: var(--primary-theme-color);
-    border-radius: 50%;
-    margin: 5px;
-}
-
-/* contact section */
-
-.contact-section {
-    background-color: var(--primary-light-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 60px 80px;
-}
-
-.contact-section h1 {
-    color: var(--primary-white);
-}
-
-.contact-section form {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    padding: 20px;
-}
-
-.contact-section form input,
-textarea {
-    margin: 10px 0;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    resize: none;
-    outline: none;
-}
-
-/* footer section */
-
-footer {
-    background-color: var(--primary-color);
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    font-size: 12px;
-    color: var(--primary-grey);
-}
-
-footer p a {
-    color: var(--primary-white);
-}
-
-footer p a:hover {
-    color: var(--primary-theme-color);
-}
-
-/* media queris */
-
-@media (max-width: 860px) {
-    .header-links {
-        position: absolute;
-        flex-direction: column;
-        height: 100vh;
-        top: 0;
-        right: -100vh;
-        display: none;
-        background-color: var(--primary-color);
-        justify-content: start;
-        padding: 20px;
-        transition: right 0.3s ease;
-        box-shadow: 2px 5px 15px var(--primary-theme-color);
-    }
-
-    header ul {
-        margin-top: 40px;
-        flex-direction: column;
-        line-height: 3rem;
-    }
-
-    .cancel-icon {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 18px;
-        width: 20px;
-        height: 20px;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    /* hero section media queris */
-    .hero-section {
-        flex-direction: column;
-    }
-
-    .service-cards-container {
-        flex-direction: column;
-    }
-
-    .service-card {
-        margin: 10px 0;
-    }
-
-    .about-section {
-        flex-direction: column;
-    }
-
-    .about-section ol {
-        margin-left: 0;
-        margin-top: 40px;
-    }
-
-    .about-section img {
-        height: auto;
-    }
-
-    .about-section ol li h1 {
-        font-size: 30px;
-    }
-
-    .about-section {
-        padding: 40px 30px;
-    }
-
-    .contact-section form {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding: 20px 0;
-    }
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            .btn {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div>
-            <a href="./index.html"><span class="logo-text"><span class="blue-span">Lyod Keven</span> Manzanero</span></a>
-        </div>
-        <div class="header-links">
-            <div class="cancel-icon">
-                <i class="fa-solid fa-xmark" style="font-size: larger;"></i>
-            </div>
-        <div>
-        <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="#services">About</a></li>
-            <li><a href="./index.html#contact">Contact</a></li>
-        </ul>
-    </div>
-    <div>
-        <a href="https://www.facebook.com/mnznrlyd"
-        target="_blank"><button class="fa-brands fa-facebook-messenger"> Message me</button></a>
-    </div>
-    <div class="menu-icon">
-        <i class="fa-solid fa-bars"></i>
+
+    <h1>Welcome to My Project</h1>
+
+    <div class="button-container">
+        <a href="project1.html" class="btn">Project 1</a>
+        <a href="project2.html" class="btn">Project 2</a>
+        <a href="project3.html" class="btn">Project 3</a>
+        <a href="project4.html" class="btn">Project 4</a>
+        <a href="project5.html" class="btn">Project 5</a>
     </div>
 
-    </header>
-    <main>
-        <section class="hero-section">
-            <div class="hero-text">
-                <h3>Hi There,</h3>
-                <h1><span class="logo-text"><span class="blue-span">Lyod Keven</span> Manzanero</span></h1>
-                <p class="grey-span">
-                    <h3> I'm a
-                        <span class="multi-text blue-span"></span>
-                        <span class="blink"></span>
-                    </h3>
-                </p>
-                <div class="social-icon">
-                    <a href="https://www.facebook.com/mnznrlyd"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.youtube.com/@lkmnznr"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://www.instagram.com/lydmnznr/"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-                <a href="#services"><button class="btn">Read More</button></a>
-            </div>
-            <div class="hero-img">
-                <img src="https://i.imgur.com/KU2u0G1.png">
-            </div>
-        </section>
-        <section class="service-section" id="services">
-            <h1>My <span class="blue-span">Services</span></h1>
-            <div class="service-cards-container">
-                <div class="service-card">
-                    <i class="fa-solid fa-earth-americas"></i>
-                    <h4>Graphic Designer</h4>
-                    <p>As an Graphic Designer, I create pubmat on my organization in Google Developer Student Club.</p>
-                    <a href="#">view demo</a>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-shapes"></i>
-                    <h4>Web Design:</h4>
-                    <p>As an Web Designer, I enhance online presence and engage audience effectively.
-                    </p>
-                    <a href="#">view demo</a>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-icons"></i>
-                    <h4>Editor:</h4>
-                    <p>As an Editor, I refine content for clarity, coherence, and quality to resonate with its audience..</p>
-                    <a href="#">view demo</a>
-                </div>
-            </div>
-        </section>
-        <section class="about-section" id="about">
-            <div class="img-div">
-                <img src="https://i.imgur.com/xaHQBZh.png" alt="Jayson">
-            </div>
-            <div>
-                <ol>
-                    <li>
-                        <h1>I'm a <span class="blue-span">Web Developer</span> also a <span class="blue-span"> Graphic Designer</span></h1>
-                    </li>
-                    <li><strong>Experience: </strong>Beginner</li>
-                    <li><strong>Who I'm: </strong>Web Developer, Editor, Graphic Designer</li>
-                    <li><strong>Place: </strong>Bagumbayan,Tanuan City, Batangas</li>
-                    <li><strong>Email: </strong><a href="kevenmanzanero21@gmail.com">kevenmanzanero21@gmail.com</a></li>
-                    <li><strong>Phone: </strong>+63 9852176272</li>
-                    <li><a href="#contact" ><button class="btn">Connect me</button></li></a>
-                </ol>
-            </div>
-        </section>
-        <section class="contact-section" id="contact">
-            <h1>My <span class="blue-span">Contact</span></h1>
-            <form action="#">
-                <input type="text" name="username" placeholder="Your Name">
-                <input type="email" name="email" placeholder="Email">
-                <textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
-                <button class="submit-btn">Submit</button>
-            </form>
-        </section>
-    </main> 
-    <footer>
-        <p>Copyright &copy; 2024 - <a href="#" target="_blank">Coder Lyod</a> - AllRights Reserverd.</p>
-    </footer>
-    <script>
-        let menuIcon = document.querySelector('.menu-icon');
-let cancelIcon = document.querySelector('.cancel-icon');
-let headerLinks = document.querySelector('.header-links');
-
-menuIcon.addEventListener('click', function () {
-    headerLinks.style.display = 'block';
-    headerLinks.style.right = '0';
-});
-
-cancelIcon.addEventListener('click', function () {
-    headerLinks.style.right = '-100vh';
-    headerLinks.style.display = 'none';
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const options = {
-        strings: ['Web Developer', 'Graphic Designer', 'Editor', 'Google Developer'],
-        typeSpeed: 150,
-        backSpeed: 50,
-        backDelay: 1000,
-        loop: true
-    };
-
-    const multiTextElement = document.querySelector('.multi-text');
-    let currentTextIndex = 0;
-    let currentText = '';
-    let isDeleting = false;
-
-    function type() {
-        const fullText = options.strings[currentTextIndex];
-        if (isDeleting) {
-            currentText = fullText.substring(0, currentText.length - 1);
-        } else {
-            currentText = fullText.substring(0, currentText.length + 1);
-        }
-
-        multiTextElement.textContent = currentText;
-
-        let typeSpeed = options.typeSpeed;
-        if (isDeleting) {
-            typeSpeed /= 2;
-        }
-
-        if (!isDeleting && currentText === fullText) {
-            typeSpeed = options.backDelay;
-            isDeleting = true;
-        } else if (isDeleting && currentText === '') {
-            isDeleting = false;
-            currentTextIndex = (currentTextIndex + 1) % options.strings.length;
-        }
-
-        setTimeout(type, typeSpeed);
-    }
-
-    type();
-});
-
-    </script>
 </body>
 </html>
