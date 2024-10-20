@@ -1,68 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi There, Im Lyod Keven</title>
+    <title>Lyod Keven - Projects</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Global Styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #8e6fca, #f8a5c2);
+            color: white;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
+            overflow-x: hidden;
         }
 
-        h1 {
-            margin-bottom: 40px;
+        /* Navbar Styles */
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
         }
 
-        .button-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
             gap: 20px;
-            width: 90%;
-            max-width: 600px;
         }
 
-        .btn {
-            background-color: #4CAF50;
+        nav ul li a {
+            text-decoration: none;
             color: white;
-            padding: 15px;
-            text-align: center;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff7675;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                background-color: rgba(0, 0, 0, 0.9);
+                width: 200px;
+                border-radius: 8px;
+                padding: 10px;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Section with Left-Aligned Content */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1300px;
+            margin-top: 130px;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-content {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .text-content h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #ffcccc;
+        }
+
+        .text-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .join-btn {
+            background-color: #ff7675;
+            color: white;
+            padding: 15px 25px;
             text-decoration: none;
             font-size: 18px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.2s;
+            text-align: center;
         }
 
-        .btn:hover {
-            background-color: #45a049;
+        .join-btn:hover {
+            background-color: #ff6b6b;
+            transform: scale(1.05);
         }
 
-        @media (max-width: 600px) {
-            .btn {
-                font-size: 16px;
-                padding: 12px;
+        .image-content {
+            flex: 1;
+        }
+
+        .image-content img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .text-content {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .button-group {
+                justify-content: center;
             }
         }
     </style>
 </head>
+
 <body>
+    <nav>
+        <div class="logo">My Project</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Galleries</a></li>
+            <li><a href="#">Event</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
 
-    <h1>Hi There, I'm Lyod Keven</h1>
+    <section class="content">
+        <!-- Left-aligned Text Content -->
+        <div class="text-content">
+            <h1>Hi There, I'm Lyod Keven</h1>
+            <p>This homepage will be dedicated to displaying your upcoming works and projects.</p>
+            <p>Feel free to let me know if you'd like more variations or adjustments!</p>
+            <div class="button-group">
+                <a href="#" class="join-btn">Project 1</a>
+                <a href="#" class="join-btn">Project 2</a>
+                <a href="#" class="join-btn">Project 3</a>
+                <a href="#" class="join-btn">Project 4</a>
+                <a href="#" class="join-btn">Project 5</a>
+            </div>
+        </div>
 
-    <div class="button-container">
-        <a href="project1.html" class="btn">Project 1</a>
-        <a href="project2.html" class="btn">Project 2</a>
-        <a href="project3.html" class="btn">Project 3</a>
-        <a href="project4.html" class="btn">Project 4</a>
-        <a href="project5.html" class="btn">Project 5</a>
-    </div>
+        <!-- Right Image Content -->
+        <div class="image-content">
+            <img src="https://cdn.dribbble.com/users/4845304/screenshots/10750770/sunrise__1_-01_4x.jpg" alt="Camping Image">
+        </div>
+    </section>
 
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('show');
+        }
+    </script>
 </body>
+
 </html>
