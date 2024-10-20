@@ -3,35 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camping Time</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Hi There, Im Lyod Keven</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            .btn {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Galleries</a></li>
-                <li><a href="#">Event</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Hi there, I'm Lyod Keven</h1>
-            <p>Lorem ipsum dolor sit amet, persecuti efficiendi eum at...</p>
-            <a href="#" class="btn">Join Us</a>
-        </div>
-        <div class="hero-image">
-            </div>
-    </section>
+    <h1>Hi There, I'm Lyod Keven</h1>
 
-    <footer>
-        </footer>
+    <div class="button-container">
+        <a href="project1.html" class="btn">Project 1</a>
+        <a href="project2.html" class="btn">Project 2</a>
+        <a href="project3.html" class="btn">Project 3</a>
+        <a href="project4.html" class="btn">Project 4</a>
+        <a href="project5.html" class="btn">Project 5</a>
+    </div>
+
 </body>
-                        </html>
+</html>
