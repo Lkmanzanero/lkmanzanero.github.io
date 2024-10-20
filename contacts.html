@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Lyod Keven</title>
+
+    <!-- Font Awesome CDN for Social Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #b3e5fc;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #66fcf1;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                background-color: rgba(0, 0, 0, 0.9);
+                width: 200px;
+                border-radius: 8px;
+                padding: 10px;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Main Section Styles */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 120px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #66fcf1;
+        }
+
+        p {
+            font-size: 18px;
+            color: #c5c6c7;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Contact Form Styles */
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1f2833;
+            color: white;
+            font-size: 16px;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #c5c6c7;
+        }
+
+        .contact-form button {
+            background-color: #45a29e;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .contact-form button:hover {
+            background-color: #66fcf1;
+            transform: scale(1.05);
+        }
+
+        /* Social Media Links */
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-media a {
+            color: white;
+            font-size: 30px;
+            transition: color 0.3s ease, transform 0.2s;
+        }
+
+        .social-media a:hover {
+            color: #66fcf1;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Contact Me</h1>
+        <p>If you have any questions or just want to say hello, feel free to reach out using the form below!</p>
+
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <!-- Social Media Links -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/mnznrlyd" target="_blank" class="fab fa-facebook-f"></a>
+            <a href="https://www.instagram.com/lyod.mnznr_/" target="_blank" class="fab fa-instagram"></a>
+            <a href="https://github.com/Lkmanzanero/lkmanzanero.github.io" target="_blank" class="fab fa-github"></a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>

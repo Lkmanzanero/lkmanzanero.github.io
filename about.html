@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Lyod Keven</title>
+    <style>
+        /* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fullscreen layout */
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar Styles */
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #b3e5fc;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #66fcf1;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                background-color: rgba(0, 0, 0, 0.9);
+                width: 200px;
+                border-radius: 8px;
+                padding: 10px;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Main Content Container */
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            margin: 120px auto;
+            flex-wrap: wrap;
+        }
+
+        /* Left Content: Text */
+        .text-content {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 20px;
+        }
+
+        .text-content h1 {
+            font-size: 64px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .text-content p {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #c5c6c7;
+        }
+
+        .role {
+            font-size: 24px;
+            margin: 5px 0;
+            color: #66fcf1;
+        }
+
+        /* Right Content: Profile Image */
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            background-color: #ffe600;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .text-content {
+                margin-right: 0;
+                text-align: center;
+            }
+
+            .profile-image {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Left Content -->
+        <div class="text-content">
+            <h1>I’m<br>Lyod Keven</h1>
+            <p class="role">Designer & Developer</p>
+            <p>My name is Lyod Keven Manzanero, and I am a dedicated developer with a curiosity for coding and a passion for learning. I love exploring new programming languages and frameworks, always seeking to enhance my skills and knowledge. My journey in tech is driven by a desire to create impactful applications and tackle complex challenges. I stay updated with the latest industry trends and strive to grow both personally and professionally as I work on innovative projects.</p>
+        
+        </div>
+
+        <!-- Right Content: Profile Image -->
+        <div class="profile-image">
+            <img src="https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/424536437_1772389123276884_2216271561266907307_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHYxMXNRb9zQVAfRbaucF8VZZf2Iwxks6Rll_YjDGSzpASxqcrLJbzUULmm5lzvqEH4cehph2xqFAUpkTYV03hf&_nc_ohc=ijZGnYsfs8IQ7kNvgFoMrce&_nc_ht=scontent.fmnl25-1.fna&_nc_gid=AD6VmaI_i_xcguFeHjNTfjx&oh=00_AYDk8pVY6HlZ3XsHHs71PiqVM321e885Qj8wBOl58ylv9Q&oe=671AEF71" alt="Profile Picture">
+        </div>
+        
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>
