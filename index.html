@@ -5,24 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lyod Keven - Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset margins, paddings, and set box sizing */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Full screen layout without gaps */
         html, body {
             height: 100%;
             width: 100%;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Black-blue gradient */
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             color: white;
             display: flex;
             flex-direction: column;
@@ -30,10 +30,10 @@
             align-items: center;
         }
 
-        /* Navbar Styles */
         nav {
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
@@ -42,11 +42,12 @@
             top: 0;
             left: 0;
             z-index: 2;
+            transition: background-color 0.3s ease;
         }
 
         .logo {
-            font-size: clamp(18px, 2vw, 24px); /* Adjusts size between 18px to 24px */
-            font-weight: bold;
+            font-size: clamp(20px, 2vw, 28px);
+            font-weight: 600;
         }
 
         nav ul {
@@ -58,7 +59,7 @@
         nav ul li a {
             text-decoration: none;
             color: #b3e5fc;
-            font-size: clamp(14px, 1.8vw, 18px); /* Adjust font size */
+            font-size: clamp(14px, 1.8vw, 18px);
             transition: color 0.3s ease;
         }
 
@@ -95,15 +96,20 @@
             }
         }
 
-        /* Full screen content */
         .content {
             width: 100%;
-            height: calc(100vh - 60px); /* Adjust based on navbar height */
+            height: calc(100vh - 60px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 50px;
             gap: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .text-content {
@@ -112,13 +118,14 @@
         }
 
         .text-content h1 {
-            font-size: clamp(32px, 5vw, 64px); /* Scales nicely on different screens */
+            font-size: clamp(40px, 5vw, 80px);
             margin-bottom: 15px;
             color: #03a9f4;
+            text-transform: uppercase;
         }
 
         .text-content p {
-            font-size: clamp(16px, 2vw, 24px); /* Adaptive paragraph size */
+            font-size: clamp(16px, 2vw, 24px);
             line-height: 1.6;
             margin-bottom: 20px;
         }
@@ -134,15 +141,16 @@
             color: white;
             padding: 15px 25px;
             text-decoration: none;
-            font-size: clamp(14px, 1.8vw, 18px); /* Button text scaling */
+            font-size: clamp(14px, 1.8vw, 18px);
             border-radius: 25px;
             transition: background-color 0.3s ease, transform 0.2s;
+            box-shadow: 0px 4px 15px rgba(3, 169, 244, 0.3);
             text-align: center;
         }
 
         .join-btn:hover {
             background-color: #0288d1;
-            transform: scale(1.05);
+            transform: translateY(-5px);
         }
 
         .image-content {
@@ -150,6 +158,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            animation: imageAppear 1.2s ease-in-out;
         }
 
         .image-content img {
@@ -157,6 +166,12 @@
             height: auto;
             max-height: 80vh;
             border-radius: 12px;
+            box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes imageAppear {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
 
         @media (max-width: 768px) {
@@ -164,7 +179,7 @@
                 flex-direction: column;
                 justify-content: center;
                 padding: 20px;
-                height: auto; /* Allow height to adjust naturally */
+                height: auto;
             }
 
             .text-content {
@@ -175,55 +190,4 @@
             .image-content img {
                 width: 100%;
             }
-        }
-
-        @media (max-width: 480px) {
-            .button-group {
-                flex-direction: column; /* Stack buttons on small screens */
-                align-items: center;
-            }
-
-            .join-btn {
-                width: 100%; /* Full-width buttons for small screens */
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <nav>
-        <div class="logo">My Project</div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contacts.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section class="content">
-        <div class="text-content">
-            <h1>Hi There, I'm Lyod Keven</h1>
-            <p>This homepage will be dedicated to displaying your upcoming works and projects.
-                <br> Feel free to let me know if you'd like more variations or adjustments!
-            </p>
-            <div class="button-group">
-                <a href="#" class="join-btn">Project 1</a>
-                <a href="#" class="join-btn">Project 2</a>
-                <a href="#" class="join-btn">Project 3</a>
-                <a href="#" class="join-btn">Project 4</a>
-                <a href="#" class="join-btn">Project 5</a>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('nav ul');
-            menu.classList.toggle('show');
-        }
-    </script>
-</body>
-
-</html>
+    
