@@ -190,4 +190,99 @@
             .image-content img {
                 width: 100%;
             }
+            }
+
+@media (max-width: 480px) {
+
+.button-group {
+
+flex-direction: column;
+
+align-items: center;
+
+}
+
+join-btn {
+
+width: 100%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">Lyod's Projects</div>
+
+<div class="menu-toggle" onclick="toggleMenu()"></div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contacts.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="content">
+
+<div class="text-content">
+
+<h1>Hi There, I'm Lyod Keven</h1>
+
+<p>This homepage will showcase my upcoming projects.
+
+<br> Stay tuned for updates and feel free to explore!
+
+</p>
+
+<div class="button-group">
+
+<a href="#" class="join-btn">Project 1</a>
+
+<a href="#" class="join-btn">Project 2</a>
+
+<a href="#" class="join-btn">Project 3</a>
+
+<a href="#" class="join-btn">Project 4</a>
+
+<a href="#" class="join-btn">Project 5</a>
+
+</div>
+
+<div class="image-content">
+
+</div>
+
+<img src="project-image.jpg" alt="Project Preview">
+
+</div>
+
+</section>
+
+<script>
+
+function toggleMenu() {
+
+const menu document.querySelector('nav ul');
+
+</script>
+
+</body>
+
+menu.classList.toggle('show');
+
+}
+
+</html>
     
