@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yu-Gi-Oh! Card Gallery</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #0D1B2A;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 60px;
+      color: #ffcc00; 
+      font-size: 40px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 5px;
+      text-shadow: 5px 5px 0 #ff0000, -1px -1px 0 #ff0000, 1px -1px 0 #ff0000, -1px 1px 0 #ff0000, 1px 1px 0 #ff0000;
+      transform: rotate(-3deg); 
+      font-family: 'Press Start 2P', sans-serif; 
+    }
+
+    .search-bar {
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .search-bar input {
+      padding: 8px;
+      width: 80%;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .search-bar button {
+      padding: 8px 16px;
+      font-size: 14px;
+      color: white;
+      background-color: #1A3C60;
+      border: 1px solid #1A3C60;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      background-color: #0056b3;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .card {
+      background:#9B1B30  ;
+      border: 1px solid #070707;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 5px;
+      text-align: center;
+      width: 140px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      max-height: 250px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .card h2 {
+      font-size: 14px;
+      margin: 8px 0;
+      color:  #FFFFFF;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-family: Arial, sans-serif; 
+    }
+
+    .load-more {
+      margin: 20px;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: white;
+      background-color: #1A3C60;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .load-more:hover {
+      background-color: #0056b3;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .modal.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .modal-content img {
+      width: 50%;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .modal-content p {
+      margin: 10px 0;
+      font-size: 14px;
+      line-height: 1.4;
+      max-height: 200px;
+      overflow-y: auto;
+      text-align: justify;
+    }
+
+    .modal-close {
+      margin-top: 15px;
+      padding: 8px 16px;
+      font-size: 14px;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 30px;
+      }
+
+      .search-bar input {
+        width: 70%;
+      }
+
+      .search-bar button {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+
+      .card {
+        width: 120px;
+      }
+
+      .card-container {
+        padding: 10px;
+      }
+
+      .modal-content {
+        width: 90%;
+      }
+
+      .load-more {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      .search-bar input {
+        width: 60%;
+      }
+
+      .card {
+        width: 100px;
+      }
+
+      .card-container {
+        padding: 5px;
+      }
+
+      .modal-content {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Yu-Gi-Oh! Card Gallery</h1>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search for a card...">
+    <button onclick="searchCards()">Search</button>
+  </div>
+  <div class="card-container" id="cardContainer">
+
+  </div>
+  <button class="load-more" id="loadMoreBtn">Load More</button>
+
+  <div class="modal" id="cardModal">
+    <div class="modal-content">
+      <img id="modalCardImage" src="" alt="Card Image">
+      <h2 id="modalCardName"></h2>
+      <p id="modalCardDescription"></p>
+      <button class="modal-close" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
+    const cardsPerPage = 20; 
+    let currentPage = 0; 
+    let allCards = []; 
+    let displayedCards = []; 
+
+    async function fetchAllCards() {
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        allCards = data.data; 
+        displayedCards = [...allCards]; 
+        displayCards();
+      } catch (error) {
+        console.error('Error fetching card data:', error);
+      }
+    }
+
+    function displayCards() {
+      const cardContainer = document.getElementById('cardContainer');
+      const start = currentPage * cardsPerPage;
+      const end = start + cardsPerPage;
+      const cardsToDisplay = displayedCards.slice(start, end);
+
+      cardsToDisplay.forEach(card => {
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'card';
+        cardDiv.onclick = () => showModal(card); 
+
+        const cardImage = document.createElement('img');
+        cardImage.src = card.card_images[0].image_url; 
+        cardImage.alt = card.name;
+
+        const cardName = document.createElement('h2');
+        cardName.textContent = card.name;
+
+        cardDiv.appendChild(cardImage);
+        cardDiv.appendChild(cardName);
+        cardContainer.appendChild(cardDiv);
+      });
+
+      currentPage++;
+      if (currentPage * cardsPerPage >= displayedCards.length) {
+        document.getElementById('loadMoreBtn').style.display = 'none';
+      }
+    }
+
+    function searchCards() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      displayedCards = allCards.filter(card => card.name.toLowerCase().includes(query));
+      currentPage = 0;
+      document.getElementById('cardContainer').innerHTML = ''; 
+      document.getElementById('loadMoreBtn').style.display = 'block'; 
+      displayCards();
+    }
+
+    function showModal(card) {
+      const modal = document.getElementById('cardModal');
+      document.getElementById('modalCardImage').src = card.card_images[0].image_url;
+      document.getElementById('modalCardName').textContent = card.name; 
+      document.getElementById('modalCardDescription').textContent = card.desc || 'No description available.';
+      modal.classList.add('show');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('cardModal');
+      modal.classList.remove('show');
+    }
+
+    document.getElementById('loadMoreBtn').addEventListener('click', displayCards);
+
+    fetchAllCards();
+  </script>
+</body>
+</html>
