@@ -6,23 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lyod Keven - Projects</title>
     <style>
-        /* Reset margins, paddings, and set box sizing */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Full screen layout without gaps */
+        
         html, body {
             height: 100%;
             width: 100%;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden; 
         }
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Black-blue gradient */
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); 
             color: white;
             display: flex;
             flex-direction: column;
@@ -30,7 +29,6 @@
             align-items: center;
         }
 
-        /* Navbar Styles */
         nav {
             width: 100%;
             background-color: rgba(0, 0, 0, 0.9);
@@ -45,7 +43,7 @@
         }
 
         .logo {
-            font-size: clamp(18px, 2vw, 24px); /* Adjusts size between 18px to 24px */
+            font-size: clamp(18px, 2vw, 24px); 
             font-weight: bold;
         }
 
@@ -58,7 +56,7 @@
         nav ul li a {
             text-decoration: none;
             color: #b3e5fc;
-            font-size: clamp(14px, 1.8vw, 18px); /* Adjust font size */
+            font-size: clamp(14px, 1.8vw, 18px);
             transition: color 0.3s ease;
         }
 
@@ -95,10 +93,10 @@
             }
         }
 
-        /* Full screen content */
+
         .content {
             width: 100%;
-            height: calc(100vh - 60px); /* Adjust based on navbar height */
+            height: calc(100vh - 60px);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -112,13 +110,13 @@
         }
 
         .text-content h1 {
-            font-size: clamp(32px, 5vw, 64px); /* Scales nicely on different screens */
+            font-size: clamp(32px, 5vw, 64px); 
             margin-bottom: 15px;
             color: #03a9f4;
         }
 
         .text-content p {
-            font-size: clamp(16px, 2vw, 24px); /* Adaptive paragraph size */
+            font-size: clamp(16px, 2vw, 24px); 
             line-height: 1.6;
             margin-bottom: 20px;
         }
@@ -134,7 +132,7 @@
             color: white;
             padding: 15px 25px;
             text-decoration: none;
-            font-size: clamp(14px, 1.8vw, 18px); /* Button text scaling */
+            font-size: clamp(14px, 1.8vw, 18px);
             border-radius: 25px;
             transition: background-color 0.3s ease, transform 0.2s;
             text-align: center;
@@ -164,7 +162,7 @@
                 flex-direction: column;
                 justify-content: center;
                 padding: 20px;
-                height: auto; /* Allow height to adjust naturally */
+                height: auto;
             }
 
             .text-content {
@@ -179,12 +177,12 @@
 
         @media (max-width: 480px) {
             .button-group {
-                flex-direction: column; /* Stack buttons on small screens */
+                flex-direction: column;
                 align-items: center;
             }
 
             .join-btn {
-                width: 100%; /* Full-width buttons for small screens */
+                width: 100%; 
                 text-align: center;
             }
         }
@@ -196,7 +194,7 @@
         <div class="logo">My Project</div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul>
-            <li><a href="index.html">Home</a></li> <!-- Link to Home page -->
+            <li><a href="index.html">Home</a></li> 
             <li><a href="about.html">About</a></li>
             <li><a href="contacts.html">Contact</a></li>
         </ul>
@@ -210,7 +208,7 @@
             </p>
             <div class="button-group">
                 <a href="Project1/project1.html" class="join-btn">Project 1
-                <a href="#" class="join-btn">Project 2</a>
+                <a href="Yu-Gi-Oh API/index.html" class="join-btn">Project 2</a>
                 <a href="#" class="join-btn">Project 3</a>
                 <a href="#" class="join-btn">Project 4</a>
                 <a href="#" class="join-btn">Project 5</a>
